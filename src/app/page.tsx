@@ -1,13 +1,38 @@
+import * as React from "react";
 import { Counter } from "@/app/counter";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 justify-items-center items-center">
-        {[1, 2, 3, 4, 5].map((num) => (
-          <Counter key={num} name={num.toString()} />
-        ))}
+    <>
+      <div className="flex justify-center items-center w-full my-4">
+        <Carousel
+          opts={{
+            align: "start",
+          }}
+          className="w-full max-w-7xl"
+        >
+          <CarouselContent>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <CarouselItem
+                key={index + 1}
+                className="md:basis-1/2 lg:basis-1/4"
+              >
+                <Counter key={index + 1} name={(index + 1).toString()} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
-    </div>
+      <div className="container mx-auto p-4"></div>
+    </>
   );
 }
