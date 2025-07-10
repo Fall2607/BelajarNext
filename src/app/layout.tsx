@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = Montserrat({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontMono = JetBrains_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -25,15 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header className="border-b bg-white dark:bg-gray-900">
+      <body className={`${fontSans.variable} ${fontMono.variable} antialiased`}>
+        <header className="bg-gray-900">
           <nav className="container mx-auto flex items-center justify-between py-4 px-6">
-            <div className="text-xl font-bold text-gray-900 dark:text-white">
-              <Link
-                href="/"
-                className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <div className="text-xl font-bold text-white">
+              <Link href="/" className="hover:text-blue-400 transition-colors">
                 Fallen
               </Link>
             </div>
@@ -41,7 +37,7 @@ export default function RootLayout({
               <li>
                 <Link
                   href="home"
-                  className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-200 hover:text-blue-400 transition-colors"
                 >
                   Home
                 </Link>
@@ -49,7 +45,7 @@ export default function RootLayout({
               <li>
                 <Link
                   href="product"
-                  className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-200 hover:text-blue-400 transition-colors"
                 >
                   Product
                 </Link>
@@ -57,7 +53,7 @@ export default function RootLayout({
               <li>
                 <Link
                   href="about"
-                  className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-200 hover:text-blue-400 transition-colors"
                 >
                   About
                 </Link>
@@ -65,7 +61,7 @@ export default function RootLayout({
               <li>
                 <Link
                   href="contact"
-                  className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-200 hover:text-blue-400 transition-colors"
                 >
                   Contact
                 </Link>
