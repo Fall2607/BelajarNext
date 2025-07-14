@@ -7,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+// import Image from "next/image";
 
 export default function Home() {
   return (
@@ -22,9 +23,9 @@ export default function Home() {
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem
                 key={index + 1}
-                className="md:basis-1/2 lg:basis-1/4"
+                className="md:basis-1/2 lg:basis-1/4 text-center"
               >
-                <Counter key={index + 1} name={(index + 1).toString()} />
+                <Counter></Counter>
               </CarouselItem>
             ))}
           </CarouselContent>

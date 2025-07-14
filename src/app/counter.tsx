@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
 
 export function Counter({ name = "User" }: { name?: string }) {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   return (
     <>
       {/* <Card className="max-w-sm mx-auto p-6 bg-white rounded-xl shadow-md flex flex-col items-center space-y-4">
@@ -15,7 +16,7 @@ export function Counter({ name = "User" }: { name?: string }) {
         </CardContent>
       </Card> */}
 
-      <div className="p-1">
+      {/* <div className="p-1">
         <Card>
           <CardHeader className="w-full text-center border-b border-gray-300">
             <CardTitle className="font-bold">Counter ke - {name}</CardTitle>
@@ -42,6 +43,26 @@ export function Counter({ name = "User" }: { name?: string }) {
             >
               Reset
             </button>
+          </CardContent>
+        </Card>
+      </div> */}
+      <div className="p-1">
+        <Card>
+          <CardHeader className="w-full">
+            <CardTitle>
+              <span className="text-muted-foreground text-xs font-normal">
+                Posted On Monday, 26-07-2025
+              </span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className=" bg-[#E5F4FF] flex flex-col items-center">
+            <Image
+              src="/items/1.png"
+              alt="kaoskaki_1"
+              width={150}
+              height={150}
+            />
+            <h2>Product ke - {name}</h2>
           </CardContent>
         </Card>
       </div>
